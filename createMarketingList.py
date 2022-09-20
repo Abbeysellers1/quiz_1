@@ -36,7 +36,7 @@ vendors=csv.writer(Vendor_List)
 
 # create an output file
 
-outfile = open('VendorLists.csv', 'w')
+outfile = open('marketinglistFINAL.csv', 'w')
 
 
 
@@ -49,7 +49,7 @@ outfile = open('VendorLists.csv', 'w')
 
 names={}
 names['full name']={'email', 'phone'}
-
+names['email','phone']= vendors
 
 # iterate through the csv object
 pos=names['full name']
@@ -60,11 +60,8 @@ for pos in Vendor_List:
     pos+=1
 
 
-
-
-
     # add the key-value pair to the dictionary
-    names['full name']= pos
+names['full name']= pos
 
 
 # print the dictionary after the loop is finished
