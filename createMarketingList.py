@@ -3,6 +3,7 @@
 # and the value is a dictionary where the keys are 'email' and 'phone' and the values
 # are the corresponding email address and phone number of the customer. 
 
+
 # Once the dictionary has been completed print it out. It shoud resemble what is shown
 # below (first 2 and last 2 elements shown only):
 
@@ -17,6 +18,7 @@
 # Name your file - marketinglistFINAL.csv
 
 
+
 # Note: you can use the comments below to guide you through the logic of the code. You are not
 # required to follow it. ALSO NOT ALL STEPS HAVE BEEN COMMENTED. You may have additional steps.
 
@@ -24,37 +26,53 @@
 import csv
 
 # open the vendorlist file
-
+Vendor_List= open('VendorList.csv', 'r')
 
 # create a csv object from the file object
+vendors=csv.writer('Vendor_List', 'w')
+
 
 
 # create an output file
 
+outfile = open('VendorLists.csv', 'w')
 
 
 
 
 # create an empty dictionary
+# create a dictionary of the customer's
+# full name, email address and phone number where the key is the full name of the customer
+# and the value is a dictionary where the keys are 'email' and 'phone' and the values
+# are the corresponding email address and phone number of the customer. 
 
+names={}
+names['full name']={'email', 'phone'}
 
 
 # iterate through the csv object
+pos=0
+for pos in Vendor_List:
+    print [1]
+    pos+1
 
 
 
 
     # add the key-value pair to the dictionary
-
+    names['full name']= pos
 
 
 # print the dictionary after the loop is finished
 
+print(names)
 
 
 # iternate through the dictionary and write to the output file
 
+names= csv.writer('outfile')
 
 
 # close your output file
 
+outfile.close()
