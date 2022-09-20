@@ -26,19 +26,19 @@
 import csv
 
 # open the vendorlist file
-Vendor_List= open('VendorList.csv', 'r')
+
 
 # create a csv object from the file object
-vendors=csv.writer(Vendor_List)
-
-
-
 
 # create an output file
+infile = open('VendorList.csv', 'r')
+outfile= open('marketinglistFINAL.csv','w')
+vendors=csv.writer(Vendor_List.csv)
+csvfile = csv.reader(infile, delimiter= ',')
+csvwriter=csv.writer(outfile)
 
-outfile = open('marketinglistFINAL.csv', 'w')
 
-
+next(csvfile) #this skips the first line
 
 
 # create an empty dictionary
@@ -46,20 +46,19 @@ outfile = open('marketinglistFINAL.csv', 'w')
 # full name, email address and phone number where the key is the full name of the customer
 # and the value is a dictionary where the keys are 'email' and 'phone' and the values
 # are the corresponding email address and phone number of the customer. 
-
 names={}
-names['full name']={'email', 'phone'}
+names={'full name': {'email', 'phone'}}
 names['email','phone']= vendors
 
 # iterate through the csv object
 pos=names['full name']
 
-for pos in Vendor_List:
-    print(Vendor_List[1])
-    Vendor_List[1]+=1
-    pos+=1
 
-
+for pos in csvfile:
+    if pos[0] =='full name':
+        print(Vendor_List[1])
+        Vendor_List[1]+=1
+        pos+=1
     # add the key-value pair to the dictionary
 names['full name']= pos
 
