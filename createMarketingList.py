@@ -29,7 +29,8 @@ import csv
 Vendor_List= open('VendorList.csv', 'r')
 
 # create a csv object from the file object
-vendors=csv.writer('Vendor_List', 'w')
+vendors=csv.writer(Vendor_List)
+
 
 
 
@@ -51,10 +52,13 @@ names['full name']={'email', 'phone'}
 
 
 # iterate through the csv object
-pos=0
+pos=names['full name']
+
 for pos in Vendor_List:
-    print [1]
-    pos+1
+    print(Vendor_List[1])
+    Vendor_List[1]+=1
+    pos+=1
+
 
 
 
